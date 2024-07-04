@@ -117,6 +117,9 @@ void DirectCompositeSample::LoadPipeline()
     // Create a DirectComposition "visual"
     ThrowIfFailed(m_dcompDevice->CreateVisual(m_dcompVisual.ReleaseAndGetAddressOf()));
 
+	//AMD
+	m_dcompVisual->SetCompositeMode( DCOMPOSITION_COMPOSITE_MODE_DESTINATION_INVERT );
+
     // Associate the visual with the swap chain
     ThrowIfFailed(m_dcompVisual->SetContent(swapChain.Get()));
 
